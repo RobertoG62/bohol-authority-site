@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bohol: The Ultimate Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-dark': '#1D3557',
+                        'brand-teal': '#457B9D',
+                        'brand-light': '#A8DADC',
+                        'brand-sand': '#F1FAEE',
+                        'brand-accent': '#E63946',
+                    },
+                    boxShadow: {
+                        'paper': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #e5e7eb;
+            font-family: 'Heebo', sans-serif;
+        }
+        .infographic-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            box-shadow: 0 0 50px rgba(0,0,0,0.15);
+            overflow: hidden;
+            position: relative;
+        }
+        /* Custom Pattern Background */
+        .pattern-bg {
+            background-image: radial-gradient(#457B9D 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        /* Vertical Rhythm Line */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            width: 2px;
+            background: #e5e7eb;
+            transform: translateX(50%);
+            z-index: 0;
+        }
+        @media print {
+            body { background: white; }
+            .infographic-container { margin: 0; box-shadow: none; max-width: 100%; }
+        }
+    </style>
+</head>
+<body class="py-8">
+
+    <!-- Start of Infographic -->
+    <div class="infographic-container rounded-none md:rounded-3xl">
+        
+        <!-- HEADER SECTION -->
+        <header class="bg-brand-dark text-white p-12 text-center relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full opacity-10 pattern-bg"></div>
+            <div class="relative z-10">
+                <span class="inline-block py-1 px-3 border border-white/30 rounded-full text-xs font-bold tracking-[0.2em] uppercase mb-4">Philippines Travel Guide</span>
+                <h1 class="text-6xl md:text-8xl font-display font-bold uppercase tracking-tight mb-2">BOHOL</h1>
+                <p class="text-xl md:text-2xl text-brand-light font-light max-w-2xl mx-auto">המדריך המקוצר: טבע פראי, חופים לבנים ותרבות עתיקה</p>
+                
+                <div class="mt-8 flex justify-center gap-8 text-center">
+                    <div>
+                        <span class="block text-3xl font-bold text-brand-accent">75+</span>
+                        <span class="text-xs text-gray-400 uppercase tracking-widest">איים סביב</span>
+                    </div>
+                    <div>
+                        <span class="block text-3xl font-bold text-brand-accent">1,268</span>
+                        <span class="text-xs text-gray-400 uppercase tracking-widest">גבעות שוקולד</span>
+                    </div>
+                    <div>
+                        <span class="block text-3xl font-bold text-brand-accent">28°C</span>
+                        <span class="text-xs text-gray-400 uppercase tracking-widest">ממוצע שנתי</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- SECTION 1: THE TRINITY (REGIONS) -->
+        <section class="p-12 bg-white">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="h-1 flex-grow bg-gray-200"></div>
+                <h2 class="text-3xl font-display font-bold text-brand-dark uppercase tracking-wide">שלושת המוקדים</h2>
+                <div class="h-1 flex-grow bg-gray-200"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-brand-sand p-6 rounded-xl border-t-4 border-brand-teal text-center group hover:bg-teal-50 transition">
+                    <div class="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center text-brand-teal shadow-sm mb-4 text-2xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-umbrella-beach"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-brand-dark">Panglao</h3>
+                    <p class="text-sm text-gray-600 mb-3">הלב התיירותי</p>
+                    <ul class="text-xs text-right space-y-2 text-gray-500">
+                        <li><i class="fa-solid fa-check text-brand-teal ml-2"></i>חיי לילה וריזורטים</li>
+                        <li><i class="fa-solid fa-check text-brand-teal ml-2"></i>צלילות (Balicasag)</li>
+                        <li><i class="fa-solid fa-check text-brand-teal ml-2"></i>Alona Beach</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-brand-sand p-6 rounded-xl border-t-4 border-brand-dark text-center group hover:bg-gray-100 transition">
+                    <div class="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center text-brand-dark shadow-sm mb-4 text-2xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-mountain-sun"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-brand-dark">Mainland</h3>
+                    <p class="text-sm text-gray-600 mb-3">טבע והרפתקאות</p>
+                    <ul class="text-xs text-right space-y-2 text-gray-500">
+                        <li><i class="fa-solid fa-check text-brand-dark ml-2"></i>גבעות השוקולד</li>
+                        <li><i class="fa-solid fa-check text-brand-dark ml-2"></i>נהר לובוק</li>
+                        <li><i class="fa-solid fa-check text-brand-dark ml-2"></i>קופי הטרסייר</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-brand-sand p-6 rounded-xl border-t-4 border-brand-accent text-center group hover:bg-red-50 transition">
+                    <div class="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center text-brand-accent shadow-sm mb-4 text-2xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-brand-dark">Anda</h3>
+                    <p class="text-sm text-gray-600 mb-3">השקט של המזרח</p>
+                    <ul class="text-xs text-right space-y-2 text-gray-500">
+                        <li><i class="fa-solid fa-check text-brand-accent ml-2"></i>חופים בתוליים</li>
+                        <li><i class="fa-solid fa-check text-brand-accent ml-2"></i>מערות מים (Cave Pools)</li>
+                        <li><i class="fa-solid fa-check text-brand-accent ml-2"></i>ניתוק מוחלט</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: DATA & LOGISTICS -->
+        <section class="bg-gray-900 text-white p-12 relative overflow-hidden">
+            <!-- Background Elements -->
+            <div class="absolute -right-20 -top-20 w-64 h-64 bg-brand-teal rounded-full opacity-20 blur-3xl"></div>
+            <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-brand-accent rounded-full opacity-20 blur-3xl"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
+                
+                <!-- Weather Viz -->
+                <div>
+                    <h3 class="font-display font-bold text-2xl mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-days text-brand-light"></i>
+                        מתי לטוס?
+                    </h3>
+                    <div class="space-y-4">
+                        <!-- High Season -->
+                        <div class="flex items-center text-sm">
+                            <div class="w-20 font-bold">ינו-אפר</div>
+                            <div class="flex-grow bg-white/10 h-6 rounded-full overflow-hidden relative mx-3">
+                                <div class="absolute top-0 right-0 h-full bg-brand-light w-[90%]"></div>
+                            </div>
+                            <div class="w-12 text-right font-bold text-brand-light">Best</div>
+                        </div>
+                        <!-- Shoulder -->
+                        <div class="flex items-center text-sm">
+                            <div class="w-20 font-bold">מאי-יול</div>
+                            <div class="flex-grow bg-white/10 h-6 rounded-full overflow-hidden relative mx-3">
+                                <div class="absolute top-0 right-0 h-full bg-brand-teal w-[60%]"></div>
+                            </div>
+                            <div class="w-12 text-right opacity-70">OK</div>
+                        </div>
+                        <!-- Rain -->
+                        <div class="flex items-center text-sm">
+                            <div class="w-20 font-bold">אוג-אוק</div>
+                            <div class="flex-grow bg-white/10 h-6 rounded-full overflow-hidden relative mx-3">
+                                <div class="absolute top-0 right-0 h-full bg-brand-accent w-[30%]"></div>
+                            </div>
+                            <div class="w-12 text-right text-brand-accent">Rain</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budget Viz -->
+                <div>
+                    <h3 class="font-display font-bold text-2xl mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-wallet text-brand-light"></i>
+                        תקציב יומי (לזוג)
+                    </h3>
+                    <div class="flex items-end gap-4 h-32 justify-center pb-2 border-b border-white/20">
+                        <div class="w-16 bg-white/20 rounded-t-lg relative group h-[40%] flex flex-col justify-end">
+                            <span class="absolute -top-6 w-full text-center text-xs font-bold">$40</span>
+                            <div class="text-[10px] text-center mb-1 opacity-70">Budget</div>
+                        </div>
+                        <div class="w-16 bg-brand-teal rounded-t-lg relative group h-[70%] flex flex-col justify-end">
+                            <span class="absolute -top-6 w-full text-center text-xs font-bold text-brand-teal">$100</span>
+                            <div class="text-[10px] text-center mb-1 text-black font-bold">Mid</div>
+                        </div>
+                        <div class="w-16 bg-brand-accent rounded-t-lg relative group h-[100%] flex flex-col justify-end">
+                            <span class="absolute -top-6 w-full text-center text-xs font-bold text-brand-accent">$250+</span>
+                            <div class="text-[10px] text-center mb-1">Luxury</div>
+                        </div>
+                    </div>
+                    <p class="text-xs text-center mt-3 text-gray-400">כולל לינה, אוכל והתניידות</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: THE 3-DAY FLOW -->
+        <section class="p-12 bg-white">
+            <h2 class="text-3xl font-display font-bold text-brand-dark uppercase tracking-wide text-center mb-12">המסלול המושלם (72 שעות)</h2>
+            
+            <div class="relative timeline-line space-y-12">
+                <!-- Day 1 -->
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 text-center md:text-left order-2 md:order-1">
+                        <div class="bg-brand-sand p-5 rounded-xl inline-block shadow-sm">
+                            <span class="text-brand-accent font-bold text-lg block mb-1">יום 1: נחיתה וים</span>
+                            <p class="text-sm text-gray-600">הגעה לשדה התעופה Panglao (TAG). צ'ק אין בריזורט, ושקיעה ב-Alona Beach עם קוקטייל.</p>
+                        </div>
+                    </div>
+                    <div class="w-12 h-12 bg-brand-dark text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-white shadow-lg shrink-0 order-1 md:order-2">1</div>
+                    <div class="md:w-1/2 text-center md:text-right order-3">
+                         <i class="fa-solid fa-plane-arrival text-4xl text-gray-200"></i>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 text-center md:text-left order-2 md:order-1">
+                         <i class="fa-solid fa-tree text-4xl text-gray-200"></i>
+                    </div>
+                    <div class="w-12 h-12 bg-brand-teal text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-white shadow-lg shrink-0 order-1 md:order-2">2</div>
+                    <div class="md:w-1/2 text-center md:text-right order-3">
+                        <div class="bg-brand-sand p-5 rounded-xl inline-block shadow-sm">
+                            <span class="text-brand-teal font-bold text-lg block mb-1">יום 2: ה-Countryside</span>
+                            <p class="text-sm text-gray-600">השכרת אופנוע/נהג. גבעות השוקולד בזריחה, שמורת הטרסיירים ושייט בנהר לובוק.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 text-center md:text-left order-2 md:order-1">
+                        <div class="bg-brand-sand p-5 rounded-xl inline-block shadow-sm">
+                            <span class="text-brand-dark font-bold text-lg block mb-1">יום 3: עולם המים</span>
+                            <p class="text-sm text-gray-600">יציאה ב-6 בבוקר ל-Balicasag. שנורקלינג עם צבים, ואחר הצהריים בחוף Dumaluan השקט.</p>
+                        </div>
+                    </div>
+                    <div class="w-12 h-12 bg-brand-accent text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-white shadow-lg shrink-0 order-1 md:order-2">3</div>
+                    <div class="md:w-1/2 text-center md:text-right order-3">
+                         <i class="fa-solid fa-fish-fins text-4xl text-gray-200"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER: CHECKLIST -->
+        <footer class="bg-brand-teal text-white p-12">
+            <h2 class="text-2xl font-display font-bold uppercase tracking-wide mb-6 border-b border-white/30 pb-4">Don't Forget!</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-money-bill-wave text-brand-sand text-xl"></i>
+                    <span>מזומן (למקומות קטנים)</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-mosquito text-brand-sand text-xl"></i>
+                    <span>דוחה יתושים</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-sim-card text-brand-sand text-xl"></i>
+                    <span>SIM מקומי (Globe)</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-plug text-brand-sand text-xl"></i>
+                    <span>מתאם חשמל (Type A)</span>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center text-xs opacity-60 font-light">
+                Generated by AI Research Agent | 2025 Data | Bohol Tourism Insight
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
