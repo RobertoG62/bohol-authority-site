@@ -121,6 +121,20 @@
             height: 40px;
             background: rgba(255,255,255,0.2);
         }
+
+        /* FAB pulse glow */
+        @keyframes fab-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(42, 157, 143, 0.5); }
+            50% { box-shadow: 0 0 0 14px rgba(42, 157, 143, 0); }
+        }
+        .fab-glow {
+            animation: fab-pulse 2.5s ease-in-out infinite;
+        }
+        .fab-glow:hover {
+            animation: none;
+            box-shadow: 0 8px 32px rgba(42, 157, 143, 0.4);
+            transform: scale(1.08);
+        }
     </style>
 </head>
 
@@ -776,6 +790,20 @@
             </div>
         </div>
     </footer>
+
+    <!-- ============================================ -->
+    <!-- FAB: BOHOL AI EXPERT                         -->
+    <!-- ============================================ -->
+    <a href="https://notebooklm.google.com/notebook/de33665c-bd92-4d9f-83df-186b74ed234d"
+       target="_blank" rel="noopener noreferrer"
+       class="fab-glow fixed bottom-6 left-6 z-[100] w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center bg-bohol-teal/90 backdrop-blur-md border-2 border-bohol-teal/60 text-white transition-all duration-300 cursor-pointer group"
+       title="שאל את המומחה">
+        <i class="fa-solid fa-wand-magic-sparkles text-lg md:text-xl"></i>
+        <!-- Tooltip label -->
+        <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 whitespace-nowrap bg-bohol-deep-blue text-white text-xs font-bold px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            שאל את המומחה <i class="fa-solid fa-sparkles text-bohol-orange mr-1"></i>
+        </span>
+    </a>
 
     <!-- ============================================ -->
     <!-- JAVASCRIPT                                   -->
