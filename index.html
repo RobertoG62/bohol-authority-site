@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="המדריך המקיף והעדכני ביותר לבוהול 2025. מסלולים, מחירים, אטרקציות וטיפים מהשטח. יעד טרנדי #8 בעולם.">
+    <meta property="og:title" content="Bohol Insider | המדריך המלא לבוהול 2025">
+    <meta property="og:description" content="גלו את בוהול: גבעות השוקולד, חופים לבנים, צלילות עולמיות ויוקרה שקטה באי הטרנדי ביותר בפיליפינים.">
+    <meta property="og:type" content="website">
+    <title>Bohol Insider | המדריך המלא לבוהול 2025</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                        display: ['Rubik', 'sans-serif'],
+                    },
+                    colors: {
+                        'bohol-sand': '#F3F0E7',
+                        'bohol-teal': '#2A9D8F',
+                        'bohol-deep-blue': '#264653',
+                        'bohol-orange': '#E9C46A',
+                        'bohol-sunset': '#F4A261',
+                        'bohol-earth': '#A68A64',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background-color: #F3F0E7; color: #1F2937; }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        /* Card hover lift */
+        .card-lift {
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+        }
+        .card-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px rgba(38, 70, 83, 0.12);
+        }
+
+        /* Tab states */
+        .active-tab {
+            border-bottom: 3px solid #2A9D8F;
+            color: #264653;
+            font-weight: 700;
+        }
+        .inactive-tab {
+            border-bottom: 3px solid transparent;
+            color: #6B7280;
+        }
+        .inactive-tab:hover { color: #2A9D8F; }
+
+        /* Chart container */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            height: 300px;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 350px; }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F3F0E7; }
+        ::-webkit-scrollbar-thumb { background: #A68A64; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #264653; }
+
+        /* Hero background image */
+        .hero-bg {
+            background-image:
+                linear-gradient(to bottom, rgba(38, 70, 83, 0.65), rgba(42, 157, 143, 0.55)),
+                url('https://images.unsplash.com/photo-1570789210967-2cac24ba04c0?w=1920&q=80');
+            background-size: cover;
+            background-position: center 40%;
+        }
+
+        /* Mobile menu transition */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        opacity 0.4s ease,
+                        padding 0.4s ease;
+        }
+        .mobile-menu.open {
+            max-height: 320px;
+            opacity: 1;
+        }
+
+        /* Subtle float animation for hero icon */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+
+        /* Stats bar separator */
+        .stat-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+        }
+    </style>
+</head>
+
+<body class="font-sans leading-relaxed">
+
+    <!-- ============================================ -->
+    <!-- NAVIGATION                                   -->
+    <!-- ============================================ -->
+    <nav class="bg-bohol-deep-blue/95 backdrop-blur-md text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 lg:px-8 py-3.5 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-display font-bold tracking-wider flex items-center gap-2 hover:opacity-90 transition">
+                <i class="fa-solid fa-leaf text-bohol-orange"></i>
+                Bohol<span class="text-bohol-teal">Insider</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex space-x-8 space-x-reverse text-sm font-medium">
+                <a href="#trinity" class="hover:text-bohol-orange transition-colors duration-300">שלושת המוקדים</a>
+                <a href="#logistics" class="hover:text-bohol-orange transition-colors duration-300">לוגיסטיקה</a>
+                <a href="#itineraries" class="hover:text-bohol-orange transition-colors duration-300">מסלולים</a>
+                <a href="#essentials" class="hover:text-bohol-orange transition-colors duration-300">חובה לדעת</a>
+            </div>
+
+            <!-- CTA Button (Desktop) -->
+            <a href="#itineraries" class="hidden md:inline-block bg-bohol-orange text-bohol-deep-blue font-bold text-sm py-2 px-5 rounded-full hover:bg-white transition-colors duration-300">
+                תכננו את הטיול
+            </a>
+
+            <!-- Mobile Hamburger -->
+            <button onclick="toggleMobileMenu()" id="menu-btn" class="md:hidden text-bohol-orange text-xl p-1 focus:outline-none" aria-label="תפריט">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-bohol-deep-blue border-t border-white/10">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="#trinity" onclick="closeMobileMenu()" class="text-white/90 hover:text-bohol-orange transition py-1">שלושת המוקדים</a>
+                <a href="#logistics" onclick="closeMobileMenu()" class="text-white/90 hover:text-bohol-orange transition py-1">לוגיסטיקה</a>
+                <a href="#itineraries" onclick="closeMobileMenu()" class="text-white/90 hover:text-bohol-orange transition py-1">מסלולים</a>
+                <a href="#essentials" onclick="closeMobileMenu()" class="text-white/90 hover:text-bohol-orange transition py-1">חובה לדעת</a>
+                <a href="#itineraries" onclick="closeMobileMenu()" class="bg-bohol-orange text-bohol-deep-blue font-bold text-sm text-center py-2.5 px-5 rounded-full mt-2">
+                    תכננו את הטיול
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- HERO SECTION                                 -->
+    <!-- ============================================ -->
+    <header id="hero" class="relative min-h-[100dvh] flex items-center justify-center overflow-hidden hero-bg">
+
+        <!-- Decorative overlay pattern -->
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 mb-8 text-sm">
+                <i class="fa-solid fa-trophy text-bohol-orange"></i>
+                <span>יעד טרנדי #8 בעולם לשנת 2025 — Skyscanner</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 tracking-tight leading-tight">
+                גלו את<br>
+                <span class="text-bohol-orange">בוהול</span> 2025
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="text-lg md:text-xl text-white/85 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                עלייה של 77% בחיפושי טיסות. 1.4 מיליון תיירים בשנה.
+                <br class="hidden md:block">
+                מקדש טרופי של יוקרה שקטה, חופים בתוליים וטבע שאין כמוהו.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#itineraries" class="bg-bohol-orange text-bohol-deep-blue font-bold py-3.5 px-10 rounded-full shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 text-lg">
+                    <i class="fa-solid fa-route ml-2"></i>
+                    תכננו את הטיול
+                </a>
+                <a href="#trinity" class="border-2 border-white/60 text-white font-bold py-3.5 px-10 rounded-full hover:bg-white hover:text-bohol-deep-blue transition-all duration-300 text-lg">
+                    גלו את האי
+                    <i class="fa-solid fa-arrow-down mr-2"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-28 md:bottom-24 left-1/2 -translate-x-1/2 z-10 animate-float">
+            <i class="fa-solid fa-chevron-down text-white/40 text-2xl"></i>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="absolute bottom-0 w-full z-10 glass border-t border-white/10">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-center items-center py-5 gap-6 md:gap-12">
+                    <!-- Stat 1 -->
+                    <div class="text-center">
+                        <span class="block text-2xl md:text-3xl font-bold text-bohol-deep-blue">1.4M+</span>
+                        <span class="text-xs md:text-sm text-bohol-earth uppercase tracking-widest">תיירים בשנה</span>
+                    </div>
+
+                    <div class="stat-divider hidden sm:block"></div>
+
+                    <!-- Stat 2 -->
+                    <div class="text-center">
+                        <span class="block text-2xl md:text-3xl font-bold text-bohol-deep-blue">1,268</span>
+                        <span class="text-xs md:text-sm text-bohol-earth uppercase tracking-widest">גבעות שוקולד</span>
+                    </div>
+
+                    <div class="stat-divider hidden sm:block"></div>
+
+                    <!-- Stat 3 -->
+                    <div class="text-center">
+                        <span class="block text-2xl md:text-3xl font-bold text-bohol-deep-blue">28°C</span>
+                        <span class="text-xs md:text-sm text-bohol-earth uppercase tracking-widest">ממוצע שנתי</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- PHASE 4: THE TRINITY — REGION CARDS          -->
+    <!-- ============================================ -->
+    <section id="trinity" class="py-20 bg-bohol-sand">
+        <div class="container mx-auto px-4 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="inline-block text-bohol-teal text-sm font-bold uppercase tracking-[0.2em] mb-3">Explore The Island</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-bohol-deep-blue">שלושת המוקדים של בוהול</h2>
+                <p class="text-gray-500 mt-3 max-w-xl mx-auto">כל אזור באי מציע עולם שלם. בחרו את המוקד שלכם — או שלבו בין כולם.</p>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Card: Panglao -->
+                <div onclick="expandRegion('panglao')" id="card-panglao" class="group bg-white rounded-2xl shadow-sm overflow-hidden cursor-pointer card-lift border-b-4 border-transparent hover:border-bohol-teal transition-colors duration-300">
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1551918120-9739cb430c6d?w=800&q=80');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 right-4 flex items-center gap-2">
+                            <div class="w-10 h-10 bg-bohol-teal rounded-full flex items-center justify-center text-white">
+                                <i class="fa-solid fa-umbrella-beach"></i>
+                            </div>
+                            <span class="text-white font-display font-bold text-xl">Panglao</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-bohol-deep-blue mb-1">הלב הפועם של התיירות</h3>
+                        <p class="text-sm text-gray-500 mb-4">חופים לבנים, ריזורטים יוקרתיים, צלילות עולמיות וחיי לילה.</p>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-bohol-teal mt-0.5"></i><span>Alona Beach — המרכז הסואן, מסעדות וחיי לילה</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-bohol-teal mt-0.5"></i><span>Dumaluan Beach — רחב, שקט, מושלם למשפחות</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-bohol-teal mt-0.5"></i><span>Balicasag Island — צבי ים ושוניות אלמוגים</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-bohol-teal mt-0.5"></i><span>Napaling Reef — להקות סרדינים מהחוף</span></li>
+                        </ul>
+                        <div class="mt-5 text-bohol-teal font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                            <span>גלו עוד</span>
+                            <i class="fa-solid fa-arrow-left text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Mainland -->
+                <div onclick="expandRegion('mainland')" id="card-mainland" class="group bg-white rounded-2xl shadow-sm overflow-hidden cursor-pointer card-lift border-b-4 border-transparent hover:border-bohol-deep-blue transition-colors duration-300">
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1609920658906-8223bd289001?w=800&q=80');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 right-4 flex items-center gap-2">
+                            <div class="w-10 h-10 bg-bohol-deep-blue rounded-full flex items-center justify-center text-white">
+                                <i class="fa-solid fa-mountain-sun"></i>
+                            </div>
+                            <span class="text-white font-display font-bold text-xl">Mainland</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-bohol-deep-blue mb-1">טבע פראי והרפתקאות</h3>
+                        <p class="text-sm text-gray-500 mb-4">גבעות אייקוניות, נהרות ירוקים, ג'ונגלים וקופיפים זעירים.</p>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-bohol-deep-blue mt-0.5"></i><span>גבעות השוקולד — 1,268 גבעות, כניסה 100₱</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-bohol-deep-blue mt-0.5"></i><span>שמורת הטרסיירים — Corella, כניסה 150₱</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-bohol-deep-blue mt-0.5"></i><span>שייט בנהר לובוק — בופה צף, 850-1,000₱</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-bohol-deep-blue mt-0.5"></i><span>Danao Adventure Park — נפילה חופשית, 700₱</span></li>
+                        </ul>
+                        <div class="mt-5 text-bohol-deep-blue font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                            <span>גלו עוד</span>
+                            <i class="fa-solid fa-arrow-left text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Anda -->
+                <div onclick="expandRegion('anda')" id="card-anda" class="group bg-white rounded-2xl shadow-sm overflow-hidden cursor-pointer card-lift border-b-4 border-transparent hover:border-bohol-sunset transition-colors duration-300">
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80');">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 right-4 flex items-center gap-2">
+                            <div class="w-10 h-10 bg-bohol-sunset rounded-full flex items-center justify-center text-white">
+                                <i class="fa-solid fa-gem"></i>
+                            </div>
+                            <span class="text-white font-display font-bold text-xl">Anda</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-bohol-deep-blue mb-1">"בורקאי של לפני 20 שנה"</h3>
+                        <p class="text-sm text-gray-500 mb-4">חופים בתוליים, מערות מים כחולים וניתוק מוחלט מההמון.</p>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-bohol-sunset mt-0.5"></i><span>Cabagnow Cave Pool — קפיצה למים כחולים עמוקים</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-bohol-sunset mt-0.5"></i><span>טרסות האורז של Cadapdapan — נוף עוצר נשימה</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-bohol-sunset mt-0.5"></i><span>מפלי Can-Umantad — הגבוה בבוהול (18 מטר)</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-bohol-sunset mt-0.5"></i><span>Amun Ini Resort — בוטיק יוקרתי לצוללנים</span></li>
+                        </ul>
+                        <div class="mt-5 text-bohol-sunset font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                            <span>גלו עוד</span>
+                            <i class="fa-solid fa-arrow-left text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expanded Detail Panel -->
+            <div id="trinity-detail" class="mt-10 bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500" style="max-height: 0; opacity: 0; overflow: hidden;">
+                <div id="trinity-detail-content" class="p-8 md:p-10">
+                    <!-- Dynamically populated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PHASE 5: SMART LOGISTICS                     -->
+    <!-- ============================================ -->
+    <section id="logistics" class="py-20 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="inline-block text-bohol-teal text-sm font-bold uppercase tracking-[0.2em] mb-3">Plan Smart</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-bohol-deep-blue">לוגיסטיקה ותכנון חכם</h2>
+                <p class="text-gray-500 mt-3 max-w-xl mx-auto">מחירים רשמיים, דרכי הגעה ועלויות — כל מה שצריך כדי לתכנן בלי הפתעות.</p>
+            </div>
+
+            <!-- 5A: Getting There -->
+            <h3 class="text-xl font-display font-bold text-bohol-deep-blue mb-6 flex items-center gap-3">
+                <div class="w-8 h-8 bg-bohol-teal/10 rounded-lg flex items-center justify-center">
+                    <i class="fa-solid fa-plane-departure text-bohol-teal text-sm"></i>
+                </div>
+                איך מגיעים לבוהול?
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+                <!-- Flight Card -->
+                <div class="bg-bohol-sand rounded-2xl p-6 border-r-4 border-bohol-teal">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-bohol-teal rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-plane text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-bohol-deep-blue">טיסה ישירה</h4>
+                            <span class="text-xs text-gray-500">נמל התעופה Bohol-Panglao (TAG)</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-clock text-bohol-teal w-5"></i>
+                            <span>ממנילה: כ-1.5 שעות | Cebu Pacific, AirAsia, PAL</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-tag text-bohol-teal w-5"></i>
+                            <span>מחיר: <strong>2,500 — 4,000 PHP</strong></span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-route text-bohol-teal w-5"></i>
+                            <span>גם מאל-נידו (AirSwift) ואינצ'ון (Jeju Air)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Ferry Card -->
+                <div class="bg-bohol-sand rounded-2xl p-6 border-r-4 border-bohol-sunset">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-bohol-sunset rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-ship text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-bohol-deep-blue">מעבורת מסבו</h4>
+                            <span class="text-xs text-gray-500">Cebu Pier 1 → Tagbilaran</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-clock text-bohol-sunset w-5"></i>
+                            <span>OceanJet | ~2 שעות | <strong>~16 הפלגות ביום</strong></span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-tag text-bohol-sunset w-5"></i>
+                            <span>Tourist: <strong>500-800₱</strong> | Business: <strong>1,000-1,200₱</strong></span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info text-bohol-sunset w-5"></i>
+                            <span>Business מומלץ למשפחות. הזמנה מראש בעונה!</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 5B: Getting Around -->
+            <h3 class="text-xl font-display font-bold text-bohol-deep-blue mb-6 flex items-center gap-3">
+                <div class="w-8 h-8 bg-bohol-teal/10 rounded-lg flex items-center justify-center">
+                    <i class="fa-solid fa-motorcycle text-bohol-teal text-sm"></i>
+                </div>
+                עלויות התניידות יומיות
+            </h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <!-- Chart -->
+                <div class="bg-bohol-sand rounded-2xl p-6">
+                    <div class="chart-container">
+                        <canvas id="transportChart"></canvas>
+                    </div>
+                    <div class="mt-4 text-sm bg-bohol-teal/10 p-4 rounded-xl text-bohol-deep-blue flex items-start gap-2">
+                        <i class="fa-solid fa-lightbulb text-bohol-orange mt-0.5"></i>
+                        <span><strong>טיפ:</strong> קטנוע (350-500₱/יום) הכי משתלם לזוגות. ואן עם נהג (3,500-4,000₱) חובה למשפחות בטיולי Countryside.</span>
+                    </div>
+                </div>
+
+                <!-- Quick Transport Info -->
+                <div class="space-y-4">
+                    <div class="bg-bohol-sand rounded-xl p-5 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-bohol-earth/20 rounded-xl flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-bus text-bohol-earth text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-bohol-deep-blue">אוטובוס / Jeepney</h4>
+                            <p class="text-sm text-gray-500">טגבילרן → אנדה: <strong>150-170₱</strong> | 2.5+ שעות | יוצא מטרמינל Dao</p>
+                        </div>
+                    </div>
+                    <div class="bg-bohol-sand rounded-xl p-5 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-bohol-teal/10 rounded-xl flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-motorcycle text-bohol-teal text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-bohol-deep-blue">השכרת קטנוע</h4>
+                            <p class="text-sm text-gray-500"><strong>350-500₱</strong> ליום | דורש רישיון בינלאומי וקסדה</p>
+                        </div>
+                    </div>
+                    <div class="bg-bohol-sand rounded-xl p-5 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-bohol-sunset/20 rounded-xl flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-taxi text-bohol-sunset text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-bohol-deep-blue">מונית / ואן משדה התעופה</h4>
+                            <p class="text-sm text-gray-500">TAG → Alona Beach: <strong>800-1,000₱</strong> | טרייסיקל: 300-400₱ (לא למזוודות)</p>
+                        </div>
+                    </div>
+                    <div class="bg-bohol-sand rounded-xl p-5 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-bohol-deep-blue/10 rounded-xl flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-van-shuttle text-bohol-deep-blue text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-bohol-deep-blue">ואן פרטי + נהג (יום שלם)</h4>
+                            <p class="text-sm text-gray-500"><strong>3,500-4,000₱</strong> | 8 שעות, כולל דלק | עד 10 נוסעים</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5C: Entry Fees Table -->
+            <h3 class="text-xl font-display font-bold text-bohol-deep-blue mb-6 flex items-center gap-3">
+                <div class="w-8 h-8 bg-bohol-teal/10 rounded-lg flex items-center justify-center">
+                    <i class="fa-solid fa-ticket text-bohol-teal text-sm"></i>
+                </div>
+                דמי כניסה לאטרקציות (2025)
+            </h3>
+            <div class="bg-bohol-sand rounded-2xl overflow-hidden shadow-sm">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="bg-bohol-deep-blue text-white">
+                                <th class="py-4 px-6 text-right font-bold">אטרקציה</th>
+                                <th class="py-4 px-6 text-right font-bold">עלות (PHP)</th>
+                                <th class="py-4 px-6 text-right font-bold hidden sm:table-cell">הערות</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/50">
+                            <tr class="bg-white/60 hover:bg-white transition">
+                                <td class="py-4 px-6 font-medium text-bohol-deep-blue">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-solid fa-mountain text-bohol-earth"></i>
+                                        גבעות השוקולד
+                                    </div>
+                                </td>
+                                <td class="py-4 px-6"><span class="bg-bohol-teal/10 text-bohol-teal font-bold px-3 py-1 rounded-full">100₱</span></td>
+                                <td class="py-4 px-6 text-gray-500 hidden sm:table-cell">מרפסת תצפית. ATV בבסיס: ~1,500₱/שעה</td>
+                            </tr>
+                            <tr class="bg-white/30 hover:bg-white transition">
+                                <td class="py-4 px-6 font-medium text-bohol-deep-blue">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-solid fa-paw text-bohol-earth"></i>
+                                        שמורת הטרסיירים
+                                    </div>
+                                </td>
+                                <td class="py-4 px-6"><span class="bg-bohol-teal/10 text-bohol-teal font-bold px-3 py-1 rounded-full">150₱</span></td>
+                                <td class="py-4 px-6 text-gray-500 hidden sm:table-cell">השמורה הרשמית ב-Corella בלבד. הימנעו מכלובי צד הדרך</td>
+                            </tr>
+                            <tr class="bg-white/60 hover:bg-white transition">
+                                <td class="py-4 px-6 font-medium text-bohol-deep-blue">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-solid fa-water text-bohol-earth"></i>
+                                        שייט בנהר לובוק
+                                    </div>
+                                </td>
+                                <td class="py-4 px-6"><span class="bg-bohol-teal/10 text-bohol-teal font-bold px-3 py-1 rounded-full">850-1,000₱</span></td>
+                                <td class="py-4 px-6 text-gray-500 hidden sm:table-cell">כולל ארוחת צהריים בופה על רפסודה שטה</td>
+                            </tr>
+                            <tr class="bg-white/30 hover:bg-white transition">
+                                <td class="py-4 px-6 font-medium text-bohol-deep-blue">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-solid fa-person-falling text-bohol-earth"></i>
+                                        Danao: The Plunge
+                                    </div>
+                                </td>
+                                <td class="py-4 px-6"><span class="bg-bohol-sunset/20 text-bohol-sunset font-bold px-3 py-1 rounded-full">700₱</span></td>
+                                <td class="py-4 px-6 text-gray-500 hidden sm:table-cell">נפילה חופשית לקניון. זיפ-ליין: 350₱. ~3 שעות מפנגלאו</td>
+                            </tr>
+                            <tr class="bg-white/60 hover:bg-white transition">
+                                <td class="py-4 px-6 font-medium text-bohol-deep-blue">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-solid fa-droplet text-bohol-earth"></i>
+                                        מפלי Pahangog
+                                    </div>
+                                </td>
+                                <td class="py-4 px-6"><span class="bg-bohol-teal/10 text-bohol-teal font-bold px-3 py-1 rounded-full">20-50₱</span></td>
+                                <td class="py-4 px-6 text-gray-500 hidden sm:table-cell">חובה לקחת מדריך מקומי (טיפ נוסף נדרש)</td>
+                            </tr>
+                            <tr class="bg-white/30 hover:bg-white transition">
+                                <td class="py-4 px-6 font-medium text-bohol-deep-blue">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-solid fa-church text-bohol-earth"></i>
+                                        כנסיית בקלאיון
+                                    </div>
+                                </td>
+                                <td class="py-4 px-6"><span class="bg-bohol-teal/10 text-bohol-teal font-bold px-3 py-1 rounded-full">50-150₱</span></td>
+                                <td class="py-4 px-6 text-gray-500 hidden sm:table-cell">הכנסייה חינם. המוזיאון בקומה השנייה בתשלום</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="px-6 py-4 bg-white/40 border-t border-white/50 text-xs text-gray-400 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>מחירים מעודכנים לשנת 2025. דמי סביבה קטנים נגבים ברוב האתרים — מומלץ להחזיק שטרות של 20, 50 ו-100₱.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PHASE 6: CURATED ITINERARIES                 -->
+    <!-- ============================================ -->
+    <section id="itineraries" class="py-20 bg-bohol-sand">
+        <div class="container mx-auto px-4 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <span class="inline-block text-bohol-teal text-sm font-bold uppercase tracking-[0.2em] mb-3">Your Trip Blueprint</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-bohol-deep-blue">מסלולים מומלצים</h2>
+                <p class="text-gray-500 mt-3 max-w-xl mx-auto">תוכניות טיול מוכנות שנבנו על בסיס לוגיקה גיאוגרפית ונתונים מהשטח.</p>
+            </div>
+
+            <!-- Tab Switcher -->
+            <div class="flex justify-center gap-4 mb-10">
+                <button onclick="showItinerary(0)" id="itin-tab-0" class="itin-tab bg-bohol-deep-blue text-white font-bold py-3 px-8 rounded-full shadow-md transition-all duration-300 hover:shadow-lg">
+                    <i class="fa-solid fa-bolt ml-1"></i>
+                    3 ימים | הקלאסיקה
+                </button>
+                <button onclick="showItinerary(1)" id="itin-tab-1" class="itin-tab bg-white text-gray-500 border border-gray-200 font-bold py-3 px-8 rounded-full transition-all duration-300 hover:border-bohol-deep-blue hover:text-bohol-deep-blue">
+                    <i class="fa-solid fa-compass ml-1"></i>
+                    7 ימים | חוקר הטבע
+                </button>
+            </div>
+
+            <!-- Itinerary Display -->
+            <div class="max-w-3xl mx-auto">
+                <!-- Itinerary Header Card -->
+                <div id="itin-header" class="bg-white rounded-2xl shadow-sm p-6 md:p-8 mb-8 border-r-4 border-bohol-teal">
+                    <!-- Populated by JS -->
+                </div>
+
+                <!-- Timeline -->
+                <div id="itin-timeline" class="relative pr-8">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PHASE 7: FOOTER — ESSENTIALS & CREDITS       -->
+    <!-- ============================================ -->
+    <footer id="essentials" class="bg-bohol-deep-blue text-white">
+
+        <!-- Don't Forget Checklist -->
+        <div class="py-16 border-b border-white/10">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="inline-block text-bohol-orange text-sm font-bold uppercase tracking-[0.2em] mb-3">Before You Fly</span>
+                    <h2 class="text-3xl md:text-4xl font-display font-bold">אל תשכחו לפני הטיסה</h2>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <!-- Item 1: Cash -->
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center hover:bg-white/10 transition">
+                        <div class="w-14 h-14 mx-auto bg-bohol-orange/20 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-money-bill-wave text-bohol-orange text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-sm mb-1">מזומן</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">שטרות קטנים: 20, 50, 100₱. דמי סביבה נגבים בכל אתר.</p>
+                    </div>
+
+                    <!-- Item 2: Mosquito -->
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center hover:bg-white/10 transition">
+                        <div class="w-14 h-14 mx-auto bg-bohol-teal/20 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-mosquito text-bohol-teal text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-sm mb-1">דוחה יתושים</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">חובה, במיוחד בערב ובאזורי נהרות וג'ונגל.</p>
+                    </div>
+
+                    <!-- Item 3: SIM -->
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center hover:bg-white/10 transition">
+                        <div class="w-14 h-14 mx-auto bg-bohol-sunset/20 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-sim-card text-bohol-sunset text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-sm mb-1">SIM מקומי</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">Smart ל-5G בעיר, Globe לכפרי. Dual SIM מומלץ.</p>
+                    </div>
+
+                    <!-- Item 4: Power -->
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center hover:bg-white/10 transition">
+                        <div class="w-14 h-14 mx-auto bg-white/10 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-plug text-white text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-sm mb-1">מתאם חשמל</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">Type A — שני פינים שטוחים. 220V.</p>
+                    </div>
+
+                    <!-- Item 5: eTravel -->
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center hover:bg-white/10 transition col-span-2 md:col-span-1">
+                        <div class="w-14 h-14 mx-auto bg-bohol-teal/20 rounded-xl flex items-center justify-center mb-3">
+                            <i class="fa-solid fa-qrcode text-bohol-teal text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-sm mb-1">eTravel QR</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">מלאו אונליין לפני הטיסה. שמרו צילום מסך של הקוד.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Critical Warnings -->
+        <div class="py-12 border-b border-white/10">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Water Safety -->
+                    <div class="bg-red-500/10 border border-red-500/20 rounded-2xl p-6 flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-droplet-slash text-red-400 text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-red-300 mb-1 flex items-center gap-2">
+                                <span>אזהרת מים</span>
+                            </h4>
+                            <p class="text-sm text-gray-300 leading-relaxed">
+                                מי הברז בבוהול <strong class="text-red-300">אינם ראויים לשתייה</strong>. שתו אך ורק מים מינרליים או מסוננים. היזהרו מקרח בדוכני רחוב — במלונות ומסעדות מוסדרות הקרח בטוח.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ATM Alert -->
+                    <div class="bg-orange-500/10 border border-orange-500/20 rounded-2xl p-6 flex items-start gap-4">
+                        <div class="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-credit-card text-orange-400 text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-orange-300 mb-1 flex items-center gap-2">
+                                <span>התראת כספומטים — אנדה</span>
+                            </h4>
+                            <p class="text-sm text-gray-300 leading-relaxed">
+                                באנדה ובאזורי המזרח יש <strong class="text-orange-300">מחסור חמור בכספומטים</strong>. רבים אינם פעילים או מקבלים כרטיסים בינלאומיים. משכו מזומן בטגבילרן לפני הנסיעה מזרחה.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust & Ethics -->
+        <div class="py-12 border-b border-white/10">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- UBI Seal -->
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-bohol-teal/20 rounded-xl flex items-center justify-center">
+                                <i class="fa-solid fa-certificate text-bohol-teal text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-bohol-teal">UBI Seal of Excellence</h4>
+                                <span class="text-xs text-gray-400">תו האיכות של בוהול 2025</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            אנו מקדמים עסקים בעלי תו ה-<strong class="text-white">UBI Seal of Excellence</strong> — תקן הקיימות החדש של בוהול לשנת 2025 במסגרת קוד הפיתוח התיירותי המקיים. התו מבטיח אותנטיות תרבותית, הוגנות במחירים ושמירה על הסביבה.
+                        </p>
+                    </div>
+
+                    <!-- Tarsier Ethics -->
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-bohol-orange/20 rounded-xl flex items-center justify-center">
+                                <i class="fa-solid fa-heart text-bohol-orange text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-bohol-orange">תיירות אתית</h4>
+                                <span class="text-xs text-gray-400">שמרו על הטרסיירים</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            צפו בטרסיירים <strong class="text-white">אך ורק בשמורה הרשמית ב-Corella</strong>, המנוהלת על ידי הקרן לשימור הטרסייר. הימנעו לחלוטין מכלובי תצוגה בצד הדרך — הם פוגעים בבעלי החיים ואינם אתיים.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Credits -->
+        <div class="py-8">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-right">
+                    <!-- Brand -->
+                    <div class="flex items-center gap-2 text-lg font-display font-bold">
+                        <i class="fa-solid fa-leaf text-bohol-orange"></i>
+                        Bohol<span class="text-bohol-teal">Insider</span>
+                    </div>
+
+                    <!-- Credits -->
+                    <div class="text-xs text-gray-500 max-w-lg leading-relaxed">
+                        <p>מבוסס על מחקר עומק 2024-2025. מקורות: משרד התיירות הפיליפיני (DOT), Skyscanner, OceanJet, Opensignal.</p>
+                        <p class="mt-1">חלק מהקישורים באתר הם שותפויות (Affiliate Links). הדבר אינו משפיע על ההמלצות או המחירים המוצגים.</p>
+                    </div>
+
+                    <!-- Year -->
+                    <span class="text-xs text-gray-600">© 2025 Bohol Insider</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT                                   -->
+    <!-- ============================================ -->
+    <script>
+        // =============================================
+        // MOBILE MENU
+        // =============================================
+        let menuOpen = false;
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                menu.classList.add('open');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                menu.classList.remove('open');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menuOpen = false;
+            menu.classList.remove('open');
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        }
+
+        // =============================================
+        // PHASE 4: TRINITY — EXPAND/COLLAPSE
+        // =============================================
+        const trinityData = {
+            panglao: {
+                color: 'bohol-teal',
+                title: 'Panglao Island — הלב הפועם',
+                intro: 'פנגלאו מרכז את מרבית התיירות בבוהול. האי מחולק לאזורים בעלי אופי שונה לחלוטין: מהמולת אלונה ועד השקט של דומלואן.',
+                places: [
+                    { name: 'Alona Beach', desc: 'המרכז הסואן. חיי לילה, מסעדות, חנויות צלילה. צפוף אך תוסס.', icon: 'fa-martini-glass-citrus' },
+                    { name: 'Dumaluan Beach', desc: 'רצועת חוף רחבה, נקייה ושקטה. מים רדודים — מושלם לילדים קטנים.', icon: 'fa-child-reaching' },
+                    { name: 'Balicasag Island', desc: 'שמורת טבע ימית. צבי ים מובטחים כמעט בוודאות. סירה ~1,000-1,200₱.', icon: 'fa-fish' },
+                    { name: 'Napaling Reef', desc: 'להקת סרדינים ענקית ממש מהחוף (Shore Entry). אלטרנטיבה מעולה ל-Moalboal.', icon: 'fa-water' }
+                ],
+                hotels: '<strong>יוקרה:</strong> Amorita Resort (צוק, ירח דבש) | Henann (בריכות, משפחות)<br><strong>משפחות:</strong> Bohol Beach Club — חוף פרטי, מים רדודים, מדשאות<br><strong>תקציב:</strong> Green Space Inn (~1,300₱) — פנינה נסתרת, שקט ונקי'
+            },
+            mainland: {
+                color: 'bohol-deep-blue',
+                title: 'Mainland Bohol — טבע והרפתקאות',
+                intro: 'פנים האי מציע את האטרקציות האייקוניות של בוהול. ה-Countryside Tour הקלאסי מכסה את כולן ביום אחד עם ואן פרטי (3,500-4,000₱).',
+                places: [
+                    { name: 'גבעות השוקולד', desc: '1,268 גבעות שהופכות חומות בעונה היבשה (נוב-מאי). כניסה 100₱. טרקטורונים בבסיס: ~1,500₱/שעה.', icon: 'fa-mountain' },
+                    { name: 'שמורת הטרסיירים (Corella)', desc: 'הפרימט הקטן בעולם. כניסה 150₱. רק השמורה הרשמית — הימנעו מכלובי תצוגה לא אתיים.', icon: 'fa-paw' },
+                    { name: 'שייט בנהר לובוק', desc: 'בופה צף על רפסודה. 850-1,000₱ כולל ארוחה. ממוסחר אך חוויה תרבותית מרכזית.', icon: 'fa-sailboat' },
+                    { name: 'Danao Adventure Park', desc: 'The Plunge (נפילה חופשית): 700₱. זיפ-ליין: 350₱. ~3 שעות מפנגלאו — דורש יום ייעודי.', icon: 'fa-person-falling' }
+                ],
+                hotels: '<strong>כנסיית בקלאיון:</strong> אחת העתיקות בפיליפינים. מוזיאון 50-150₱. הגיעו ב-08:30 לפני ההמונים.<br><strong>Bohol Bee Farm:</strong> חווה אורגנית, גלידה, מסעדה Farm-to-Table עם נוף לים.'
+            },
+            anda: {
+                color: 'bohol-sunset',
+                title: 'Anda — החזית המזרחית',
+                intro: 'אנדה ממותגת כ"בורקאי של לפני 20 שנה". זהו היעד לצוללנים רציניים, מחפשי שלווה ומטיילים חוזרים שרוצים משהו אחר.',
+                places: [
+                    { name: 'Cabagnow Cave Pool', desc: 'מערה עם מים כחולים עמוקים. אפשר לקפוץ מגובה לתוך הבריכה — חוויה בלתי נשכחת.', icon: 'fa-person-swimming' },
+                    { name: 'טרסות Cadapdapan', desc: 'נוף עוצר נשימה המזכיר את באנאווי בצפון, אך נגיש הרבה יותר.', icon: 'fa-seedling' },
+                    { name: 'מפלי Can-Umantad', desc: 'המפל הגבוה ביותר בבוהול (~18 מטר). שווה את הנסיעה לקנדיחאי.', icon: 'fa-droplet' },
+                    { name: 'אי Lamanok', desc: 'אי מיסטי עם ציורי מערות עתיקים ומנגרובים. חוויה תרבותית ייחודית.', icon: 'fa-palette' }
+                ],
+                hotels: '<strong>יוקרה:</strong> Amun Ini Beach Resort — בוטיק עם צלילה וקולינריה עילית<br><strong>אקולוגי:</strong> Three Little Birds Resort — אינטימי, זוגות<br><strong class="text-red-500">אזהרה:</strong> באנדה יש מחסור חמור ב-ATMs. משכו מזומן בטגבילרן לפני הנסיעה!'
+            }
+        };
+
+        let activeRegion = null;
+
+        function expandRegion(key) {
+            const panel = document.getElementById('trinity-detail');
+            const content = document.getElementById('trinity-detail-content');
+            const data = trinityData[key];
+
+            // Deselect all cards
+            ['panglao', 'mainland', 'anda'].forEach(k => {
+                const card = document.getElementById('card-' + k);
+                card.classList.remove('ring-2', 'ring-bohol-teal', 'ring-bohol-deep-blue', 'ring-bohol-sunset');
+            });
+
+            // If clicking same card, collapse
+            if (activeRegion === key) {
+                activeRegion = null;
+                panel.style.maxHeight = '0';
+                panel.style.opacity = '0';
+                return;
+            }
+
+            activeRegion = key;
+
+            // Highlight active card
+            const activeCard = document.getElementById('card-' + key);
+            activeCard.classList.add('ring-2', 'ring-' + data.color);
+
+            // Build places HTML
+            const placesHtml = data.places.map(p => `
+                <div class="bg-bohol-sand rounded-xl p-4 flex items-start gap-3">
+                    <div class="w-10 h-10 bg-${data.color}/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                        <i class="fa-solid ${p.icon} text-${data.color}"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-bohol-deep-blue">${p.name}</h4>
+                        <p class="text-sm text-gray-500 mt-1">${p.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            content.innerHTML = `
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="h-1 w-12 bg-${data.color} rounded"></div>
+                    <h3 class="text-2xl font-display font-bold text-bohol-deep-blue">${data.title}</h3>
+                </div>
+                <p class="text-gray-600 mb-6 max-w-2xl">${data.intro}</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    ${placesHtml}
+                </div>
+                <div class="bg-bohol-deep-blue/5 rounded-xl p-5 text-sm text-gray-600">
+                    <h4 class="font-bold text-bohol-deep-blue mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-bed text-bohol-teal"></i> איפה ישנים?
+                    </h4>
+                    <p>${data.hotels}</p>
+                </div>
+            `;
+
+            // Animate open
+            panel.style.maxHeight = panel.scrollHeight + 500 + 'px';
+            panel.style.opacity = '1';
+
+            // Scroll to panel
+            setTimeout(() => {
+                panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+
+        // =============================================
+        // PHASE 5: CHART.JS — TRANSPORT COSTS
+        // =============================================
+        function renderTransportChart() {
+            const ctx = document.getElementById('transportChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['אוטובוס / ג\'יפני', 'קטנוע (יום)', 'טריסייקל (סיור)', 'ואן פרטי (יום)'],
+                    datasets: [{
+                        label: 'עלות משוערת (PHP)',
+                        data: [150, 425, 1500, 3750],
+                        backgroundColor: ['#A68A64', '#2A9D8F', '#F4A261', '#264653'],
+                        borderRadius: 8,
+                        borderSkipped: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#264653',
+                            titleFont: { family: 'Heebo' },
+                            bodyFont: { family: 'Heebo' },
+                            callbacks: {
+                                label: function(context) {
+                                    return context.parsed.y.toLocaleString() + ' ₱';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(0,0,0,0.05)' },
+                            ticks: {
+                                font: { family: 'Heebo' },
+                                callback: function(value) { return value.toLocaleString() + '₱'; }
+                            }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { family: 'Heebo', size: 11 } }
+                        }
+                    }
+                }
+            });
+        }
+
+        // =============================================
+        // PHASE 6: ITINERARIES
+        // =============================================
+        const itinerariesData = [
+            {
+                title: 'הקלאסיקה של בוהול',
+                duration: '3 ימים / 2 לילות',
+                audience: 'משפחות ומבקרים בפעם הראשונה',
+                budget: '8,000 — 12,000₱ לאדם (ללא טיסות)',
+                steps: [
+                    {
+                        day: 'יום 1',
+                        title: 'הגעה ופנגלאו',
+                        details: 'נחיתה ב-TAG. הגעה לפנגלאו (מונית 800-1,000₱). אחה"צ בחוף Dumaluan או שנורקלינג ב-Napaling Reef עם להקת הסרדינים. שקיעה וערב בחוף אלונה או במסעדת Mist המעוצבת.',
+                        icon: 'fa-plane-arrival',
+                        color: 'bohol-teal'
+                    },
+                    {
+                        day: 'יום 2',
+                        title: 'Countryside Tour מלא',
+                        details: 'יום שלם עם ואן פרטי (3,500-4,000₱). גבעות השוקולד + טרקטורונים (1,500₱/שעה), שמורת הטרסיירים ב-Corella (150₱), שייט בנהר לובוק (850₱ כולל ארוחה), כנסיית בקלאיון. חזרה לפנגלאו לערב חופשי.',
+                        icon: 'fa-mountain-sun',
+                        color: 'bohol-deep-blue'
+                    },
+                    {
+                        day: 'יום 3',
+                        title: 'Island Hopping',
+                        details: 'יציאה ב-06:00 לבאליקסג (צבי ים מובטחים כמעט בוודאות) ואי הבתולה (Virgin Island) — סירה ~1,000-1,200₱. אחה"צ חופשי בחוף Dumaluan השקט עד הטיסה או המעבורת.',
+                        icon: 'fa-fish',
+                        color: 'bohol-sunset'
+                    }
+                ]
+            },
+            {
+                title: 'חוקר הטבע',
+                duration: '7 ימים — המסלול המקיף',
+                audience: 'זוגות ומטיילים בקצב Slow Travel',
+                budget: 'מפנגלאו ועד אנדה — כל האי',
+                steps: [
+                    {
+                        day: 'ימים 1-3',
+                        title: 'בסיס בפנגלאו',
+                        details: 'יום 1: הגעה, התמקמות, חוף Dumaluan. יום 2: Countryside Tour מלא (גבעות, טרסיירים, לובוק). יום 3: Island Hopping לבאליקסג וצפייה בדולפינים (מרץ-יוני, יציאה 05:30).',
+                        icon: 'fa-umbrella-beach',
+                        color: 'bohol-teal'
+                    },
+                    {
+                        day: 'יום 4',
+                        title: 'המעבר לאנדה',
+                        details: 'נסיעה דרך כביש החוף המזרחי (~2.5 שעות). עצירה בעיירת Jagna לטעימת Calamay — ממתק מקומי שחייבים לנסות. הגעה לאנדה וצ\'ק אין.',
+                        icon: 'fa-road',
+                        color: 'bohol-earth'
+                    },
+                    {
+                        day: 'יום 5',
+                        title: 'אנדה — מערות ומסתורין',
+                        details: 'בוקר בבריכות המערה של Cabagnow (קפיצה מגובה למים כחולים). אחה"צ ביקור באי המיסטי Lamanok עם ציורי מערות עתיקים. ערב שקט בחוף Quinale הבתולי.',
+                        icon: 'fa-person-swimming',
+                        color: 'bohol-deep-blue'
+                    },
+                    {
+                        day: 'יום 6',
+                        title: 'קנדיחאי — טרסות ומפלים',
+                        details: 'טיול יום לטרסות האורז של Cadapdapan (נוף כמו באנאווי) ומפלי Can-Umantad — המפל הגבוה ביותר בבוהול (18 מטר). חזרה לאנדה לארוחת ערב.',
+                        icon: 'fa-seedling',
+                        color: 'bohol-sunset'
+                    },
+                    {
+                        day: 'יום 7',
+                        title: 'חזרה ופרידה',
+                        details: 'בוקר רגוע באנדה. נסיעה חזרה לשדה התעופה TAG (~2.5 שעות). חשוב: משכו מזומן לפני עזיבת טגבילרן — באנדה כמעט אין כספומטים!',
+                        icon: 'fa-plane-departure',
+                        color: 'bohol-teal'
+                    }
+                ]
+            }
+        ];
+
+        function showItinerary(index) {
+            const data = itinerariesData[index];
+
+            // Update tabs
+            document.querySelectorAll('.itin-tab').forEach((tab, i) => {
+                if (i === index) {
+                    tab.classList.add('bg-bohol-deep-blue', 'text-white', 'shadow-md');
+                    tab.classList.remove('bg-white', 'text-gray-500', 'border-gray-200');
+                } else {
+                    tab.classList.remove('bg-bohol-deep-blue', 'text-white', 'shadow-md');
+                    tab.classList.add('bg-white', 'text-gray-500', 'border-gray-200');
+                }
+            });
+
+            // Render header
+            document.getElementById('itin-header').innerHTML = `
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                        <h3 class="text-2xl font-display font-bold text-bohol-deep-blue">${data.title}</h3>
+                        <p class="text-gray-500 mt-1">${data.audience}</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="inline-flex items-center gap-1.5 bg-bohol-teal/10 text-bohol-teal text-sm font-bold px-4 py-1.5 rounded-full">
+                            <i class="fa-regular fa-calendar"></i> ${data.duration}
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 bg-bohol-orange/20 text-bohol-earth text-sm font-bold px-4 py-1.5 rounded-full">
+                            <i class="fa-solid fa-wallet"></i> ${data.budget}
+                        </span>
+                    </div>
+                </div>
+            `;
+
+            // Render timeline
+            const timelineHtml = data.steps.map((step, i) => {
+                const isLast = i === data.steps.length - 1;
+                return `
+                    <div class="relative pr-10 ${isLast ? '' : 'pb-10'}">
+                        <!-- Vertical line -->
+                        ${isLast ? '' : '<div class="absolute top-6 right-[15px] bottom-0 w-0.5 bg-gray-200"></div>'}
+                        <!-- Dot -->
+                        <div class="absolute right-0 top-0.5 w-8 h-8 bg-${step.color} rounded-full flex items-center justify-center shadow-md">
+                            <i class="fa-solid ${step.icon} text-white text-xs"></i>
+                        </div>
+                        <!-- Content -->
+                        <div class="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                            <span class="text-xs font-bold text-${step.color} uppercase tracking-wider">${step.day}</span>
+                            <h4 class="font-bold text-lg text-bohol-deep-blue mt-1">${step.title}</h4>
+                            <p class="text-sm text-gray-500 mt-2 leading-relaxed">${step.details}</p>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('itin-timeline').innerHTML = timelineHtml;
+        }
+
+        // =============================================
+        // INIT
+        // =============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            renderTransportChart();
+            showItinerary(0);
+        });
+    </script>
+
+</body>
+</html>
